@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="example"></p>
+<input type="button" value="Create a table"  onclick='create_table()'>
+<script>
+function create_table() {
+var n=0, i=0, sum = 0, num=0;
+var body = document.body;
+n = prompt("Enter count of distinct values, \
+    			in the range [1,10]", "");
+   if((n < 1) || (n > 10)){
+	t1=document.createTextNode("  Error, wrong value");
+	body.appendChild(t1);
+   }
+   else {
+	 var A = new Array(10);
+	 var B = new Array(10);
+         for(i=0; i < n; i++) {
+    	  A[i] = prompt("Enter next score","");
+          B[i] = prompt("Enter next frequency","");
+          sum+=parseInt(A[i]*B[i]);
+          num+=parseInt(B[i]);
+	 }
+	 
+	 var table1 = document.createElement("table");
+  	 var tblBody = document.createElement("tbody");
+  	 for (var i = 0; i < 3; i++) {
+  	   var row = document.createElement("tr");
+    	   for (var j = 0; j <= n; j++) {
+      	      var cell = document.createElement("td");
+      	      var m;
+      	      switch(i) {
+  				case 1:
+    		   		if(j==0) m="Score";
+            	   else m=A[j-1];
+    		     break;
+  		case 2:
+   		   if(j==0) m="Frequency";
+            	else m=B[j-1];
+    		   break;
+  		default:
+    		   if(j==0) m="Index";
+            	   else m=j;
+	      } 
+      	      var cellText =document.createTextNode(m);
+      	      cell.appendChild(cellText);
+      	      row.appendChild(cell);
+	   }
+    	   tblBody.appendChild(row);
+ 	 }
+	 table1.appendChild(tblBody);
+	 body.appendChild(table1);
+	 table1.setAttribute("border", "2");
+	 t2=document.createTextNode("Mean=" + sum/num);
+	 body.appendChild(t2);
+}
+}
+</script>
+</body>
+</html>

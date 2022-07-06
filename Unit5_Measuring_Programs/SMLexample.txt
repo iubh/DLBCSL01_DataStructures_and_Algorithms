@@ -1,0 +1,20 @@
+fun semiperimeter7(width:real, height:real):real = width + height;
+print(semiperimeter7(10.5,2.3));
+
+fun semiperimeter6(width:real, height:real) = width + height;
+print(semiperimeter6(10.5,2.3));
+
+fun semiperimeter5(width:real, height):real = width + height;
+print(semiperimeter5(10.5,2.3));
+
+fun semiperimeter4(width:real, height) = width + height;
+print(semiperimeter4(10.5,2.3));
+
+fun semiperimeter3(width, height:real):real = width + height;
+print(semiperimeter3(10.5,2.3));
+
+fun semiperimeter2(width, height:real) = width + height;
+print(semiperimeter2(10.5,2.3));
+
+fun semiperimeter1(width, height):real = width + height;
+print(semiperimeter1(10.5,2.3));

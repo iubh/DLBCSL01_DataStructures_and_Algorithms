@@ -1,0 +1,24 @@
+main:
+   PUSH %BP ; Push base pointer onto stack
+   MOV  %SP, %BP; base pointer = stack pointer
+@main_body:
+   SUB  %SP, $4, %SP ; reserve space on stack for a
+   MOV  $1, -4(%BP); set a = 1
+   SUB  %SP, $4, %SP; reserve space on stack for b
+   MOV  $2, -8(%BP); set b = 2
+   SUB  %SP, $4, %SP; reserve space on stack for i
+   MOV  $0, -12(%BP); set i = 0
+@while0:
+   CMP  -12(%BP), $5; compare i with 5
+   JGE  @false0; exit while loop if i >= 5
+@true0:
+   ADD  -4(%BP), -8(%BP), %0; compute a+ b
+   MOV  %0, -4(%BP); a = a + b
+   INC  -12(%BP); i++
+   JMP  @while0; control goes back to while loop start
+@false0:
+@exit0:
+@main_exit:
+   MOV  %BP, %SP; stack pointer = base pointer
+   POP  %BP; pops value from stack
+   RET 
