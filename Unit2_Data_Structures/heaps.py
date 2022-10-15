@@ -4,13 +4,13 @@ class Heap:
 
     def isEmpty(self):
         return self._X == []
-    
+
     def size(self):
         return len(self._X)
-    
+
     def _parent(self, i):
         return((i-1)//2)
-      
+
     def insert(self, newElement):
         #Append at the end
         self._X.append(newElement)
@@ -24,7 +24,7 @@ class Heap:
             else:
                 break
             i = top
-            
+
     def _maxChild(self, i):
         if 2*i + 2 >= self.size():
             maxChild = 2*i+1
@@ -33,12 +33,12 @@ class Heap:
         else:
             maxChild = 2*i+2
         return(maxChild)
-            
-            
+
+
     def extractMax(self):
         #Remove the maximum element from heap and return
         maxElement=self._X.pop(0)
-        if(self.size != 0):
+        if(self.size() != 0):
             #Bring last element to front
             lastElement=self._X.pop()
             self._X.insert(0, lastElement)
@@ -52,14 +52,14 @@ class Heap:
                 else:
                     break
                 i =m
-            return maxElement     
-                
+            return maxElement
+
     def reportMax(self):
         return(self._X[0])
-              
+
     def printHeap(self):
-            print(self._X)   
-                
+            print(self._X)
+
 H=Heap()
 H.insert(5)
 H.insert(12)
