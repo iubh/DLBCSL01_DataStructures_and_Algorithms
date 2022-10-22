@@ -11,8 +11,6 @@ class Node:
     def setNextNode(self, elem):
         self.nextNode = elem
 
-anode = Node(22)
-print(anode.getElement())
 
 
 class LinkedList:
@@ -28,7 +26,7 @@ class LinkedList:
         temp.setNextNode(self.head)
         self.head=temp
         self.length +=1
-          
+
     def deleteNode(self, elem):
         lastNode = None
         thisNode = self.head
@@ -41,7 +39,7 @@ class LinkedList:
             else:
                 lastNode = thisNode
                 thisNode = thisNode.getNextNode()
-               
+
         if(thisNode==None):
             print("Element not in list")
         elif lastNode == None: #head node gets deleted
@@ -58,11 +56,24 @@ class LinkedList:
             if thisNode.getElement() == elem:
                 found = True
             else:
-                thisNode = thisNode.getNextNode()            
+                thisNode = thisNode.getNextNode()
         return found
 
-    
-    
-    
-        
 
+list = LinkedList()
+print("Empty? " + str(list.isEmpty()))
+list.addNode("1")
+list.addNode("2")
+list.addNode("3")
+
+node = list.head
+while node != None:
+    print(str(node.getElement()))
+    node = node.nextNode
+
+print("Searching for 3: " + str(list.searchNode("3")))
+list.deleteNode("2")
+node = list.head
+while node != None:
+    print(str(node.getElement()))
+    node = node.nextNode
