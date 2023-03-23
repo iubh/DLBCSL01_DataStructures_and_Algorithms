@@ -3,7 +3,7 @@ def linSearch(numList, keyValue):
     """Search for keyValue in numList.
     Args:
         numList: a list of values
-    
+
         keyValue: a value being searched for in numList.
     Returns:
         index of keyValue in numList if found.
@@ -15,7 +15,7 @@ def linSearch(numList, keyValue):
             return index
         index += 1
     return -1
-     
+
 print(linSearch(aList,11))
 help(linSearch)
 
@@ -40,8 +40,8 @@ def testMax(num1, num2, num3):
         maxNum = num2
     if(num3 > maxNum):
         maxNum = num3
-        return maxNum
-        
+    return maxNum
+
 from radon.visitors import ComplexityVisitor
 v = ComplexityVisitor.from_code('''
 aList = [23,34,2,13,11,-1,33,-44]
@@ -78,7 +78,7 @@ alist=[]
 pi=3.14
 for index in range(0,20):
     alist.append(2*pi*index)
-  
+
 print(alist)
 
 alist=[]
@@ -86,9 +86,9 @@ pi=3.14
 twoPi=2*3.14
 for index in range(0,20):
     alist.append(twoPi*index)
-    
+
 print(alist)
-    
+
 a=2
 b=3
 y=3**a + 3**a*b
@@ -102,4 +102,3 @@ if flag:
     a += 1
 else:
     b+=1
-    

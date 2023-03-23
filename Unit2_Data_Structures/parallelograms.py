@@ -4,11 +4,11 @@ class Parallelogram:
         self.second = q
         self.third = p
         self.fourth = q
-        
+
     def perimeter(self):
-        return(self.first + self.second +\
+        return(self.first + self.second +
                self.third+self.fourth)
-        
+
 
 
 class Rectangle(Parallelogram):
@@ -17,7 +17,7 @@ class Rectangle(Parallelogram):
 
     def area(self):
         return(self.first*self.second)
-        
+
 class Square(Rectangle):
     def __init__(self, p):
         super().__init__(p,p)
