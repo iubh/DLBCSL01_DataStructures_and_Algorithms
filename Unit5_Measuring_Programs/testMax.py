@@ -5,4 +5,4 @@ def testMax(num1, num2, num3):
         maxNum = num2
     if(num3 > maxNum):
         maxNum = num3
-        return maxNum
+    return maxNum
